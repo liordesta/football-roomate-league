@@ -1,7 +1,21 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import { Home } from './pages/Home';
+import { Login } from './pages/Login';
+import { Navbar } from './components/Navbar';
+
+import './App.css';
+
 export const App = () => {
   return (
     <div>
-      <h1>Football Roomate League</h1>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
     </div>
   );
 };
